@@ -367,8 +367,8 @@ Section bilimit.
     transitivity (ds_hom DS k m Hkm c); auto.
     apply embed_mono.
     rewrite <- H11; auto.
-    intros. rewrite <- H1. auto.
-    intros. rewrite <- H1. auto.
+    intros. rewrite <- H2. auto.
+    intros. rewrite <- H2. auto.
   Qed.
 
   (**  Altogether, this makes the bilimit a plotkin order.
@@ -677,7 +677,7 @@ Section colimit_decompose2.
   Variable DS : directed_system I (EMBED hf).
   Variable CC : cocone DS.
   Hypothesis decompose : forall x:cocone_point CC,
-    { i:I & { a:ds_F DS i | cocone_spoke CC i a ≈ x }}.
+    { i:I & { a:ds_F DS i & cocone_spoke CC i a ≈ x }}.
 
   Definition decompose_univ_func (YC:cocone DS) (x:cocone_point CC) :=
     cocone_spoke YC 

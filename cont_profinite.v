@@ -58,10 +58,10 @@ Section cPLT.
                  ≤ cplt_retract B ∘ cplt_hom g ∘ cplt_retract A)
        _ _.
   Next Obligation.
-    intros; auto.
+    simpl. intros; auto.
   Qed.
   Next Obligation.
-    intros. etransitivity; eauto.
+    simpl. intros. etransitivity; eauto.
   Qed.
 
   Canonical Structure hom_ord (A B:ob) := Preord.Pack (hom A B) (hom_ord_mixin A B).
@@ -908,7 +908,7 @@ Section cPLT.
       intros.
       red; simpl.
 
-Require Import fixes.      
+Require Import Domains.fixes.      
 
       transitivity ((∐
         (image (postcompose _ (cplt_retract B) ∘ precompose _ (cplt_retract A)) 

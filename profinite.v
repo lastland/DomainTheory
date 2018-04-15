@@ -685,7 +685,10 @@ Section PLT.
     Next Obligation. simpl. auto. Qed.
 
     Program Definition homset_sup (M:cl_eset (directed_hf_cl hf) (hom_ord A B)) 
-      : hom A B := Hom A B (∪(image hom_rel' M)) _ _.
+      : hom A B := Hom A B (∪(image hom_rel' _)) _ _.
+    Next Obligation.
+      intros. apply M.
+    Defined.
     Next Obligation.
       intros. apply union_axiom in H1. apply union_axiom.
       destruct H1 as [X [??]].
@@ -716,7 +719,7 @@ Section PLT.
       exists (hom_rel q). split; auto.
       apply image_axiom1'; eauto.
       exists q. split; auto.
-      
+
       intros y1 y2. intros.
       apply erel_image_elem in H.
       apply erel_image_elem in H0.
@@ -1097,7 +1100,7 @@ Section plt_const.
     repeat intro. unfold plt_const_rel. split; intro.
     apply eprod_elem in H. destruct H.
     apply esubset_dec_elem in H0. destruct H0; auto.
-    intros. rewrite <- H1; auto.
+    intros. rewrite <- H2; auto.
     apply eprod_elem. split.
     apply eff_complete.
     apply esubset_dec_elem.
@@ -1273,4 +1276,3 @@ Proof.
   simpl in H4. apply ident_elem in H4.
   exists c0; auto.
 Qed.
-

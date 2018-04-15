@@ -2,21 +2,21 @@ Require Import QArith.
 Require Import Setoid.
 Require Import Coq.Program.Basics.
 
-Require Import basics.
-Require Import preord.
-Require Import categories.
-Require Import sets.
-Require Import finsets.
-Require Import esets.
-Require Import effective.
-Require Import directed.
-Require Import plotkin.
-Require Import joinable.
-Require Import approx_rels.
-Require Import profinite.
-Require Import cusl.
+Require Import Domains.basics.
+Require Import Domains.preord.
+Require Import Domains.categories.
+Require Import Domains.sets.
+Require Import Domains.finsets.
+Require Import Domains.esets.
+Require Import Domains.effective.
+Require Import Domains.directed.
+Require Import Domains.plotkin.
+Require Import Domains.joinable.
+Require Import Domains.approx_rels.
+Require Import Domains.profinite.
+Require Import Domains.cusl.
 
-Require Import rational_intervals.
+Require Import Domains.rational_intervals.
 
 Require Import Qminmax.
 
@@ -989,7 +989,7 @@ Proof.
 Qed.
 
 
-Require Import cont_profinite.
+Require Import Domains.cont_profinite.
 
 Definition RealDom : c∂PLT :=
   cPLT.Ob true PreRealDom canon canon_idem.

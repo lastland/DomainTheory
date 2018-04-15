@@ -50,7 +50,7 @@ Next Obligation.
   hnf; intros.
   apply H in H1.
   apply finsubset_elem in H1. destruct H1; auto.
-  intros. rewrite <- H2; auto.
+  intros. rewrite <- H3; auto.
   destruct H1.
   exists x. split.
   destruct H1; auto.
@@ -63,7 +63,7 @@ Next Obligation.
   apply H in H3.
   apply finsubset_elem in H3.
   destruct H3; auto.
-  intros. rewrite <- H4; auto.
+  intros. rewrite <- H5; auto.
 Qed.
 
 Definition forgetPLT_ob (X:ob PLT) : ob ∂PLT :=
@@ -83,7 +83,7 @@ Qed.
 
 Program Definition forgetPLT : functor PLT ∂PLT :=
   Functor PLT ∂PLT forgetPLT_ob forgetPLT_map _ _ _.
-Solve Obligations of forgetPLT using auto.
+Solve Obligations of forgetPLT with auto.
 
 Definition liftPPLT_ob (X:ob ∂PLT) : ob PLT :=
   PLT.Ob _ (option (PLT.carrier _ X)) (PLT.Class _ _
@@ -357,7 +357,7 @@ Proof.
   transitivity (Some (fst y)); auto.
   destruct H2. auto.
   intros.
-  destruct H1 as [[??][??]].
+  destruct H2 as [[??][??]].
   transitivity (snd x0); auto.
   transitivity (fst x0); auto.
   apply union2_elem.
@@ -467,7 +467,7 @@ Proof.
   destruct H0 as [[??][??]]. simpl in *.
   transitivity (Some q); auto.
   transitivity (Some p); auto.
-  intros. destruct H1 as [[??][??]].
+  intros. destruct H2 as [[??][??]].
   transitivity (snd x); auto.  
   transitivity (fst x); auto.  
   
@@ -508,7 +508,7 @@ Next Obligation.
   apply adj_counit_rel_elem in H0.
   rewrite H2 in H0. auto.
   simpl; intros.
-  destruct H2 as [[??][??]]; auto.
+  destruct H3 as [[??][??]]; auto.
   transitivity (fst x0); auto.
   apply erel_image_elem.
   apply adj_counit_rel_elem. auto.
@@ -992,8 +992,8 @@ Proof.
   simpl in H0.
   apply ident_elem in H0.
   revert H. simpl.
-  simpl.
-  apply pair_rel_ordering; auto.
+  unfold PLT.effective. simpl.
+  eapply pair_rel_ordering; eauto.
   apply PLT.hom_order.
   apply PLT.hom_order.
   destruct a.
