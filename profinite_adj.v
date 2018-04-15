@@ -2,18 +2,18 @@
 
 Require Import Setoid.
 
-Require Import basics.
-Require Import preord.
-Require Import categories.
-Require Import sets.
-Require Import finsets.
-Require Import esets.
-Require Import effective.
-Require Import plotkin.
-Require Import joinable.
-Require Import approx_rels.
-Require Import profinite.
-Require Import cpo.
+Require Import Domains.basics.
+Require Import Domains.preord.
+Require Import Domains.categories.
+Require Import Domains.sets.
+Require Import Domains.finsets.
+Require Import Domains.esets.
+Require Import Domains.effective.
+Require Import Domains.plotkin.
+Require Import Domains.joinable.
+Require Import Domains.approx_rels.
+Require Import Domains.profinite.
+Require Import Domains.cpo.
 
 (**  * Adjoint relation between the pointed and unpointed domains.
 

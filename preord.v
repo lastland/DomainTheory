@@ -3,8 +3,8 @@
 Require Import Setoid.
 Require Import Coq.Program.Basics.
 
-Require Import basics.
-Require Import categories.
+Require Import Domains.basics.
+Require Import Domains.categories.
 
 Delimit Scope preord_scope with preord.
 Open Scope preord_scope.
@@ -165,13 +165,22 @@ Proof.
   intros; destruct H; auto.
 Qed.
 
-
 (**  Set up setoid rewriting
   *)
 Add Parametric Relation (A:preord) : (Preord.carrier A) (@Preord.ord_op A)
   reflexivity proved by (ord_refl A)
   transitivity proved by (ord_trans A)
     as ord_rel.
+
+Print Instances Reflexive.
+
+Add Parametric Relation (A:preord) : (Preord.carrier A) (eq_op (Preord_Eq A))
+    reflexivity proved by (eq_op_rel_Reflexive (Preord_Eq A))
+    symmetry proved by (eq_op_rel_Symmetric (Preord_Eq A))
+    transitivity proved by (eq_op_rel_Transitive (Preord_Eq A))
+      as eq_rel.
+
+Print Instances Reflexive.
 
 Add Parametric Morphism (A:preord) :
   (@Preord.ord_op A)
@@ -213,7 +222,7 @@ Proof.
   apply Preord.axiom. auto.
   apply H.
 Qed.
-  
+
 Add Parametric Morphism (A B:preord) :
   (@Preord.map A B)
    with signature (eq_op (Preord_Eq (hom_order A B))) ==>
@@ -267,7 +276,8 @@ Canonical Structure PREORD_concrete.
   *)
 Lemma preord_eq : forall (X Y:preord) (f:X → Y) (x y:X), x ≈ y -> f x ≈ f y.
 Proof.
-  intros. rewrite H. auto.
+  intros. Check (X → Y).
+  rewrite H. auto.
 Qed.
 
 Lemma preord_ord : forall (X Y:preord) (f:X → Y) (x y:X), x ≤ y -> f x ≤ f y.

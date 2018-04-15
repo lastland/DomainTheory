@@ -1,11 +1,11 @@
 (* Copyright (c) 2014, Robert Dockins *)
 
-Require Import basics.
-Require Import preord.
-Require Import categories.
-Require Import sets.
-Require Import finsets.
-Require Import effective.
+Require Import Domains.basics.
+Require Import Domains.preord.
+Require Import Domains.categories.
+Require Import Domains.sets.
+Require Import Domains.finsets.
+Require Import Domains.effective.
 
 (**  * Conditionally-inhabited sets and h-directed sets.
   *)
@@ -270,7 +270,7 @@ Require Import Arith.
 Require Import NArith.
 
 Program Definition nat_ord := Preord.Pack nat (Preord.Mixin nat le _ _).
-Solve Obligations using eauto with arith.
+Solve Obligations with eauto with arith.
   
 Program Definition nat_eff : effective_order nat_ord :=
   EffectiveOrder nat_ord le_dec (fun x => Some (N.to_nat x)) _.
@@ -290,9 +290,8 @@ Next Obligation.
   apply cons_elem in H. destruct H.
   rewrite H.
   red; simpl.
-  apply Max.le_max_l.
+  apply Nat.le_max_l.
   transitivity k.
   apply u. auto.
-  red; simpl.
-  apply Max.le_max_r.
+  apply Nat.le_max_r.
 Qed.

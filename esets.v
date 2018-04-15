@@ -4,12 +4,12 @@ Require Import Relations.
 Require Import List.
 Require Import NArith.
 
-Require Import basics.
-Require Import preord.
-Require Import categories.
-Require Import pairing.
-Require Import sets.
-Require Import finsets.
+Require Import Domains.basics.
+Require Import Domains.preord.
+Require Import Domains.categories.
+Require Import Domains.pairing.
+Require Import Domains.sets.
+Require Import Domains.finsets.
 
 (**  * The theory of enumerable sets.
 
@@ -974,7 +974,7 @@ Proof.
   split; split; auto.
   rewrite <- H2. auto.
   intros.
-  rewrite <- H1. auto.
+  rewrite <- H2. auto.
   unfold erel_image.
   change y with (π₂# ((x,y) : A×B)).
   apply image_axiom1.
@@ -1003,7 +1003,7 @@ Proof.
   destruct H1; destruct H0.
   split; split; auto.
   rewrite <- H2; auto.
-  intros. rewrite <- H1; auto.
+  intros. rewrite <- H2; auto.
   unfold erel_inv_image.
   change x with (π₁# ((x,y) : A × B)).
   apply image_axiom1.

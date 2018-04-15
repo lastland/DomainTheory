@@ -1,7 +1,7 @@
 (* Copyright (c) 2014, Robert Dockins *)
 
 Require Import Setoid.
-Require Export notations.
+Require Export Domains.notations.
 
 (** * Setoids and equality.
 

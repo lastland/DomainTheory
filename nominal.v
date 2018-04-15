@@ -2,13 +2,13 @@
 
 Require Import Setoid.
 
-Require Import basics.
-Require Import categories.
-Require Import preord.
-Require Import sets.
-Require Import finsets.
-Require Import atoms.
-Require Import permutations.
+Require Import Domains.basics.
+Require Import Domains.categories.
+Require Import Domains.preord.
+Require Import Domains.sets.
+Require Import Domains.finsets.
+Require Import Domains.atoms.
+Require Import Domains.permutations.
 
 (** * The category of nominal types
   *)

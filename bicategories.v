@@ -2,8 +2,8 @@
 
 Require Import Setoid.
 
-Require Import basics.
-Require Import categories.
+Require Import Domains.basics.
+Require Import Domains.categories.
 
 
 

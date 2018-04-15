@@ -6,23 +6,23 @@ Require Import Arith.
 Require Import Omega.
 
 
-Require Import basics.
-Require Import preord.
-Require Import categories.
-Require Import sets.
-Require Import finsets.
-Require Import esets.
-Require Import effective.
-Require Import directed.
-Require Import plotkin.
-Require Import joinable.
-Require Import approx_rels.
-Require Import cpo.
-Require Import profinite.
-Require Import profinite_adj.
-Require Import strict_utils.
-Require Import fixes.
-Require Import flat.
+Require Import Domains.basics.
+Require Import Domains.preord.
+Require Import Domains.categories.
+Require Import Domains.sets.
+Require Import Domains.finsets.
+Require Import Domains.esets.
+Require Import Domains.effective.
+Require Import Domains.directed.
+Require Import Domains.plotkin.
+Require Import Domains.joinable.
+Require Import Domains.approx_rels.
+Require Import Domains.cpo.
+Require Import Domains.profinite.
+Require Import Domains.profinite_adj.
+Require Import Domains.strict_utils.
+Require Import Domains.fixes.
+Require Import Domains.flat.
 
 (** * Soundness and adequacy simply-typed SKI with booleans and fixpoints.
 

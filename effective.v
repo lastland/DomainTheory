@@ -1,11 +1,11 @@
 (* Copyright (c) 2014, Robert Dockins *)
 
-Require Import basics.
-Require Import preord.
-Require Import categories.
-Require Import sets.
-Require Import finsets.
-Require Import esets.
+Require Import Domains.basics.
+Require Import Domains.preord.
+Require Import Domains.categories.
+Require Import Domains.sets.
+Require Import Domains.finsets.
+Require Import Domains.esets.
 
 Require Import NArith.
 
@@ -35,7 +35,7 @@ Coercion eff_to_ord_dec : effective_order >-> ord_dec.
   *)
 Program Definition Ndisc_ord : preord :=
   Preord.Pack N (Preord.Mixin N (@eq N) _ _).
-Solve Obligations of Ndisc_ord using intros; subst; auto.
+Solve Obligations of Ndisc_ord with intros; subst; auto.
 Canonical Structure Ndisc_ord.
 
 Program Definition effective_Nord : effective_order Ndisc_ord

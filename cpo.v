@@ -1,12 +1,12 @@
 (* Copyright (c) 2014, Robert Dockins *)
 
-Require Import basics.
-Require Import preord.
-Require Import categories.
-Require Import sets.
-Require Import finsets.
-Require Import esets.
-Require Import directed.
+Require Import Domains.basics.
+Require Import Domains.preord.
+Require Import Domains.categories.
+Require Import Domains.sets.
+Require Import Domains.finsets.
+Require Import Domains.esets.
+Require Import Domains.directed.
 
 Delimit Scope cpo_scope with cpo.
 Open Scope cpo_scope.
@@ -230,8 +230,9 @@ Module CPO.
     apply image_axiom1'. exists x. split; auto.
   Qed.
 
+  (* LY: why coercions [ord_hom] does not happen automatically here? *)
   Program Definition compose {CL:color} {X Y Z:type CL} (g:hom CL Y Z) (f:hom CL X Y)
-    := build_hom X Z (g ∘ f) _.
+    := build_hom X Z ((ord_hom g) ∘ (ord_hom f)) _.
   Next Obligation.
     repeat intro. 
     cut (least_upper_bound (g (f lub)) (image g (image f XS))).

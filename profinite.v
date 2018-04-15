@@ -2,18 +2,18 @@
 
 Require Import Setoid.
 
-Require Import basics.
-Require Import preord.
-Require Import categories.
-Require Import sets.
-Require Import finsets.
-Require Import esets.
-Require Import effective.
-Require Import directed.
-Require Import plotkin.
-Require Import joinable.
-Require Import approx_rels.
-Require Import cpo.
+Require Import Domains.basics.
+Require Import Domains.preord.
+Require Import Domains.categories.
+Require Import Domains.sets.
+Require Import Domains.finsets.
+Require Import Domains.esets.
+Require Import Domains.effective.
+Require Import Domains.directed.
+Require Import Domains.plotkin.
+Require Import Domains.joinable.
+Require Import Domains.approx_rels.
+Require Import Domains.cpo.
 
 Delimit Scope plt_scope with plt.
 Open Scope plt_scope.
@@ -68,7 +68,11 @@ Section PLT.
 
   Program Definition hom_ord_mixin (A B:ob) : Preord.mixin_of (hom A B) :=
     Preord.Mixin (hom A B) (fun f g => hom_rel f ≤ hom_rel g) _ _.
-  Solve Obligations of hom_ord_mixin using (intros; eauto).
+  Solve Obligations of hom_ord_mixin with (intros; eauto).
+  Solve Obligations of hom_ord_mixin with (simpl; auto).
+  Next Obligation.
+    simpl. intros. etransitivity; eauto.
+  Qed.
   
   Canonical Structure hom_ord (A B:ob) := Preord.Pack (hom A B) (hom_ord_mixin A B).
 

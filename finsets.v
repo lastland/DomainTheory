@@ -5,10 +5,10 @@ Require Import List.
 Require Import Setoid.
 Require Import Arith.
 
-Require Import basics.
-Require Import preord.
-Require Import categories.
-Require Import sets.
+Require Import Domains.basics.
+Require Import Domains.preord.
+Require Import Domains.categories.
+Require Import Domains.sets.
 
 (** * The theory of finite sets.
 
@@ -67,6 +67,7 @@ Section finset.
     destruct H2 as [a' [??]].
     destruct H3.
     destruct (H3 a') as [a'' [??]]; eauto.
+    exists a'. split; auto.
     exists a''. split; auto.
     apply in_or_app. auto.
     eauto.
@@ -494,8 +495,8 @@ Proof.
   split; intros.
   unfold fin_intersect in H.
   apply finsubset_elem in H.
-  destruct H; split; auto.
-  intros. rewrite <- H0; auto.
+  intuition.
+  intros. rewrite <- H1; auto.
   unfold fin_intersect.
   apply finsubset_elem.
   intros. rewrite <- H0; auto.

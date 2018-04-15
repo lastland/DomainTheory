@@ -2,23 +2,23 @@
 
 Require Import List.
 
-Require Import basics.
-Require Import categories.
-Require Import preord.
-Require Import sets.
-Require Import finsets.
-Require Import esets.
-Require Import effective.
-Require Import plotkin.
-Require Import profinite.
-Require Import embed.
-Require Import joinable.
-Require Import directed.
-Require Import cont_functors.
-Require Import bilimit.
-Require Import exp_functor.
-Require Import profinite_adj.
-Require Import cont_adj.
+Require Import Domains.basics.
+Require Import Domains.categories.
+Require Import Domains.preord.
+Require Import Domains.sets.
+Require Import Domains.finsets.
+Require Import Domains.esets.
+Require Import Domains.effective.
+Require Import Domains.plotkin.
+Require Import Domains.profinite.
+Require Import Domains.embed.
+Require Import Domains.joinable.
+Require Import Domains.directed.
+Require Import Domains.cont_functors.
+Require Import Domains.bilimit.
+Require Import Domains.exp_functor.
+Require Import Domains.profinite_adj.
+Require Import Domains.cont_adj.
 
 Notation Ue := liftEMBED.
 Notation Le := forgetEMBED.

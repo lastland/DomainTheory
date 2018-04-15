@@ -2,7 +2,7 @@
 
 Require Import Setoid.
 
-Require Import basics.
+Require Import Domains.basics.
 
 (** * Some elementary category theory.
     
@@ -320,7 +320,7 @@ Program Definition mono_cat_axioms (C:category) :
   Category.axioms (ob C) (monomorphism C)
      (mono_eq C) (mono_comp_mixin C).
 Proof.
-  intro. constructor.
+  constructor.
 
   intros. apply cat_ident1.
   intros. apply cat_ident2.
@@ -404,7 +404,7 @@ Program Definition epi_cat_axioms (C:category) :
   Category.axioms (ob C) (epimorphism C)
      (epi_eq C) (epi_comp_mixin C).
 Proof.
-  intro. constructor.
+  constructor.
 
   intros. apply cat_ident1.
   intros. apply cat_ident2.
@@ -2142,7 +2142,7 @@ Program Definition ONE : category :=
       (fun A B => Eq.Mixin _ (fun x y => True) _ _ _)
       (Comp.Mixin _ _ (fun _ => tt) (fun _ _ _ _ _ => tt))
       _.
-Solve Obligations of ONE using auto.
+Solve Obligations of ONE with auto.
 Next Obligation.
   constructor.
   intros. hnf. auto.

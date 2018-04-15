@@ -2,27 +2,27 @@
 
 Require Import String.
 
-Require Import atoms.
-Require Import permutations.
+Require Import Domains.atoms.
+Require Import Domains.permutations.
 
-Require Import basics.
-Require Import preord.
-Require Import categories.
-Require Import sets.
-Require Import finsets.
-Require Import esets.
-Require Import effective.
-Require Import directed.
-Require Import plotkin.
-Require Import joinable.
-Require Import approx_rels.
-Require Import cpo.
-Require Import profinite.
-Require Import finprod.
-Require Import flat.
-Require Import profinite_adj.
-Require Import fixes.
-Require Import strict_utils.
+Require Import Domains.basics.
+Require Import Domains.preord.
+Require Import Domains.categories.
+Require Import Domains.sets.
+Require Import Domains.finsets.
+Require Import Domains.esets.
+Require Import Domains.effective.
+Require Import Domains.directed.
+Require Import Domains.plotkin.
+Require Import Domains.joinable.
+Require Import Domains.approx_Domainsrels.
+Require Import Domains.cpo.
+Require Import Domains.profinite.
+Require Import Domains.finprod.
+Require Import Domains.flat.
+Require Import Domains.profinite_adj.
+Require Import Domains.fixes.
+Require Import Domains.strict_utils.
 
 Require Import List.
 

@@ -3,9 +3,9 @@
 Require Import Relations.
 Require Import List.
 
-Require Import basics.
-Require Import preord.
-Require Import categories.
+Require Import Domains.basics.
+Require Import Domains.categories.
+Require Import Domains.preord.
 
 Delimit Scope set_scope with set.
 Open Scope set_scope.

@@ -1,9 +1,9 @@
 (* Copyright (c) 2014, Robert Dockins *)
 
-Require Import basics.
-Require Import categories.
-Require Import preord.
-Require Import directed.
+Require Import Domains.basics.
+Require Import Domains.categories.
+Require Import Domains.preord.
+Require Import Domains.directed.
 
 (** * Directed colimits and continuous functors.
  *)
